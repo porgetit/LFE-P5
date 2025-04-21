@@ -1,4 +1,4 @@
--- c3.vhd
+-- c3_sop.vhd
 library ieee;
 use ieee.std_logic_1164.all;
 
