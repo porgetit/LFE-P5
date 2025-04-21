@@ -40,5 +40,5 @@ begin
     D020 <= (S1 and S2 and (not S3) and S4 and S5);
     D021 <= (S1 and S2 and S3 and (not S4) and (not S5));
     D022 <= (S1 and S2 and S3 and (not S4) and S5);
-    D0 <= D01 or D02 or D03 or D04 or D05 or D06 or D07 or D08 or D09 or D010 or D011 or D012 or D013 or D014 or D015 or D016 or D017 or D018 or D019 or D020 D021 or D022;
+    D0 <= D01 or D02 or D03 or D04 or D05 or D06 or D07 or D08 or D09 or D010 or D011 or D012 or D013 or D014 or D015 or D016 or D017 or D018 or D019 or D020 or D021 or D022;
 end behavior;
