@@ -4,13 +4,13 @@ use ieee.std_logic_1164.all;
 
 entity Main is
     port (
-        -- Entradas 
+        -- Inputs
         S1 : in  std_logic;
         S2 : in  std_logic;
         S3 : in  std_logic;
         S4 : in  std_logic;
         S5 : in  std_logic;
-        -- Salidas 
+        -- Outputs
         D0 : out std_logic;
         D1 : out std_logic;
         D2 : out std_logic;
@@ -21,7 +21,7 @@ end entity Main;
 architecture Structural of Main is
 
     ------------------------------------------------------------------
-    --  Declaración de componentes (se enlazan con las entidades C1‑C4)
+    --  Component declarations
     ------------------------------------------------------------------
     component C1
         port ( S1,S2,S3,S4,S5 : in  std_logic;
@@ -41,7 +41,7 @@ architecture Structural of Main is
     end component;
 
     ------------------------------------------------------------------
-    --  Señales intermedias
+    --  Intermediate signals
     ------------------------------------------------------------------
     signal D0_C1 : std_logic;
     signal D1_C2 : std_logic;
@@ -50,7 +50,7 @@ architecture Structural of Main is
 
 begin
     ------------------------------------------------------------------
-    --  Instancias de los sub‑módulos
+    --  Sub-module instances
     ------------------------------------------------------------------
     U_C1 : C1 port map (S1, S2, S3, S4, S5, D0_C1);
     U_C2 : C2 port map (S1, S2, S3, S4, S5, D1_C2);
@@ -58,7 +58,7 @@ begin
     U_C4 : C4 port map (S1, S2, S3, S4, S5, D3_C4);
 
     ------------------------------------------------------------------
-    --  Lógica de asignación de salidas
+    --  Output assignment logic
     ------------------------------------------------------------------
     D0 <= D0_C1;
     D1 <= D1_C2;

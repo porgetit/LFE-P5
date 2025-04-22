@@ -8,13 +8,13 @@ end entity Main_tb;
 
 architecture Test of Main_tb is
     ------------------------------------------------------------------
-    -- Señales del banco de pruebas
+    -- Testbench signals
     ------------------------------------------------------------------
     signal S1, S2, S3, S4, S5 : std_logic;
     signal D0, D1, D2, D3     : std_logic;
 
     ------------------------------------------------------------------
-    -- Instancia del dispositivo bajo prueba (DUT)
+    -- Device Under Test (DUT) instance
     ------------------------------------------------------------------
     component Main
         port (
@@ -31,134 +31,134 @@ begin
         );
 
     ------------------------------------------------------------------
-    -- Proceso de estimulación
+    -- Stimulation process
     ------------------------------------------------------------------
     process begin
-        -- Estímulo 0
+        -- Stimulus 0: 00000
         S1 <= '0'; S2 <= '0'; S3 <= '0'; S4 <= '0'; S5 <= '0';
         wait for 10 ns;
 
-        -- Estímulo 1
-        S1 <= '1'; S2 <= '0'; S3 <= '0'; S4 <= '0'; S5 <= '0';
-        wait for 10 ns;
-
-        -- Estímulo 2
-        S1 <= '0'; S2 <= '1'; S3 <= '0'; S4 <= '0'; S5 <= '0';
-        wait for 10 ns;
-
-        -- Estímulo 3
-        S1 <= '1'; S2 <= '1'; S3 <= '0'; S4 <= '0'; S5 <= '0';
-        wait for 10 ns;
-
-        -- Estímulo 4
-        S1 <= '0'; S2 <= '0'; S3 <= '1'; S4 <= '0'; S5 <= '0';
-        wait for 10 ns;
-
-        -- Estímulo 5
-        S1 <= '1'; S2 <= '0'; S3 <= '1'; S4 <= '0'; S5 <= '0';
-        wait for 10 ns;
-
-        -- Estímulo 6
-        S1 <= '0'; S2 <= '1'; S3 <= '1'; S4 <= '0'; S5 <= '0';
-        wait for 10 ns;
-
-        -- Estímulo 7
-        S1 <= '1'; S2 <= '1'; S3 <= '1'; S4 <= '0'; S5 <= '0';
-        wait for 10 ns;
-
-        -- Estímulo 8
-        S1 <= '0'; S2 <= '0'; S3 <= '0'; S4 <= '1'; S5 <= '0';
-        wait for 10 ns;
-
-        -- Estímulo 9
-        S1 <= '1'; S2 <= '0'; S3 <= '0'; S4 <= '1'; S5 <= '0';
-        wait for 10 ns;
-
-        -- Estímulo 10
-        S1 <= '0'; S2 <= '1'; S3 <= '0'; S4 <= '1'; S5 <= '0';
-        wait for 10 ns;
-
-        -- Estímulo 11
-        S1 <= '1'; S2 <= '1'; S3 <= '0'; S4 <= '1'; S5 <= '0';
-        wait for 10 ns;
-
-        -- Estímulo 12
-        S1 <= '0'; S2 <= '0'; S3 <= '1'; S4 <= '1'; S5 <= '0';
-        wait for 10 ns;
-
-        -- Estímulo 13
-        S1 <= '1'; S2 <= '0'; S3 <= '1'; S4 <= '1'; S5 <= '0';
-        wait for 10 ns;
-
-        -- Estímulo 14
-        S1 <= '0'; S2 <= '1'; S3 <= '1'; S4 <= '1'; S5 <= '0';
-        wait for 10 ns;
-
-        -- Estímulo 15
-        S1 <= '1'; S2 <= '1'; S3 <= '1'; S4 <= '1'; S5 <= '0';
-        wait for 10 ns;
-
-        -- Estímulo 16
+        -- Stimulus 1: 00001
         S1 <= '0'; S2 <= '0'; S3 <= '0'; S4 <= '0'; S5 <= '1';
         wait for 10 ns;
 
-        -- Estímulo 17
-        S1 <= '1'; S2 <= '0'; S3 <= '0'; S4 <= '0'; S5 <= '1';
+        -- Stimulus 2: 00010
+        S1 <= '0'; S2 <= '0'; S3 <= '0'; S4 <= '1'; S5 <= '0';
         wait for 10 ns;
 
-        -- Estímulo 18
-        S1 <= '0'; S2 <= '1'; S3 <= '0'; S4 <= '0'; S5 <= '1';
-        wait for 10 ns;
-
-        -- Estímulo 19
-        S1 <= '1'; S2 <= '1'; S3 <= '0'; S4 <= '0'; S5 <= '1';
-        wait for 10 ns;
-
-        -- Estímulo 20
-        S1 <= '0'; S2 <= '0'; S3 <= '1'; S4 <= '0'; S5 <= '1';
-        wait for 10 ns;
-
-        -- Estímulo 21
-        S1 <= '1'; S2 <= '0'; S3 <= '1'; S4 <= '0'; S5 <= '1';
-        wait for 10 ns;
-
-        -- Estímulo 22
-        S1 <= '0'; S2 <= '1'; S3 <= '1'; S4 <= '0'; S5 <= '1';
-        wait for 10 ns;
-
-        -- Estímulo 23
-        S1 <= '1'; S2 <= '1'; S3 <= '1'; S4 <= '0'; S5 <= '1';
-        wait for 10 ns;
-
-        -- Estímulo 24
+        -- Stimulus 3: 00011
         S1 <= '0'; S2 <= '0'; S3 <= '0'; S4 <= '1'; S5 <= '1';
         wait for 10 ns;
 
-        -- Estímulo 25
-        S1 <= '1'; S2 <= '0'; S3 <= '0'; S4 <= '1'; S5 <= '1';
+        -- Stimulus 4: 00100
+        S1 <= '0'; S2 <= '0'; S3 <= '1'; S4 <= '0'; S5 <= '0';
         wait for 10 ns;
 
-        -- Estímulo 26
-        S1 <= '0'; S2 <= '1'; S3 <= '0'; S4 <= '1'; S5 <= '1';
+        -- Stimulus 5: 00101
+        S1 <= '0'; S2 <= '0'; S3 <= '1'; S4 <= '0'; S5 <= '1';
         wait for 10 ns;
 
-        -- Estímulo 27
-        S1 <= '1'; S2 <= '1'; S3 <= '0'; S4 <= '1'; S5 <= '1';
+        -- Stimulus 6: 00110
+        S1 <= '0'; S2 <= '0'; S3 <= '1'; S4 <= '1'; S5 <= '0';
         wait for 10 ns;
 
-        -- Estímulo 28
+        -- Stimulus 7: 00111
         S1 <= '0'; S2 <= '0'; S3 <= '1'; S4 <= '1'; S5 <= '1';
         wait for 10 ns;
 
-        -- Estímulo 29
-        S1 <= '1'; S2 <= '0'; S3 <= '1'; S4 <= '1'; S5 <= '1';
+        -- Stimulus 8: 01000
+        S1 <= '0'; S2 <= '1'; S3 <= '0'; S4 <= '0'; S5 <= '0';
         wait for 10 ns;
 
-        -- Estímulo 30
+        -- Stimulus 9: 01001
+        S1 <= '0'; S2 <= '1'; S3 <= '0'; S4 <= '0'; S5 <= '1';
+        wait for 10 ns;
+
+        -- Stimulus 10: 01010
+        S1 <= '0'; S2 <= '1'; S3 <= '0'; S4 <= '1'; S5 <= '0';
+        wait for 10 ns;
+
+        -- Stimulus 11: 01011
+        S1 <= '0'; S2 <= '1'; S3 <= '0'; S4 <= '1'; S5 <= '1';
+        wait for 10 ns;
+
+        -- Stimulus 12: 01100
+        S1 <= '0'; S2 <= '1'; S3 <= '1'; S4 <= '0'; S5 <= '0';
+        wait for 10 ns;
+
+        -- Stimulus 13: 01101
+        S1 <= '0'; S2 <= '1'; S3 <= '1'; S4 <= '0'; S5 <= '1';
+        wait for 10 ns;
+
+        -- Stimulus 14: 01110
+        S1 <= '0'; S2 <= '1'; S3 <= '1'; S4 <= '1'; S5 <= '0';
+        wait for 10 ns;
+
+        -- Stimulus 15: 01111
         S1 <= '0'; S2 <= '1'; S3 <= '1'; S4 <= '1'; S5 <= '1';
         wait for 10 ns;
 
-        -- Estímulo 31
+        -- Stimulus 16: 10000
+        S1 <= '1'; S2 <= '0'; S3 <= '0'; S4 <= '0'; S5 <= '0';
+        wait for 10 ns;
+
+        -- Stimulus 17: 10001
+        S1 <= '1'; S2 <= '0'; S3 <= '0'; S4 <= '0'; S5 <= '1';
+        wait for 10 ns;
+
+        -- Stimulus 18: 10010
+        S1 <= '1'; S2 <= '0'; S3 <= '0'; S4 <= '1'; S5 <= '0';
+        wait for 10 ns;
+
+        -- Stimulus 19: 10011
+        S1 <= '1'; S2 <= '0'; S3 <= '0'; S4 <= '1'; S5 <= '1';
+        wait for 10 ns;
+
+        -- Stimulus 20: 10100
+        S1 <= '1'; S2 <= '0'; S3 <= '1'; S4 <= '0'; S5 <= '0';
+        wait for 10 ns;
+
+        -- Stimulus 21: 10101
+        S1 <= '1'; S2 <= '0'; S3 <= '1'; S4 <= '0'; S5 <= '1';
+        wait for 10 ns;
+
+        -- Stimulus 22: 10110
+        S1 <= '1'; S2 <= '0'; S3 <= '1'; S4 <= '1'; S5 <= '0';
+        wait for 10 ns;
+
+        -- Stimulus 23: 10111
+        S1 <= '1'; S2 <= '0'; S3 <= '1'; S4 <= '1'; S5 <= '1';
+        wait for 10 ns;
+
+        -- Stimulus 24: 11000
+        S1 <= '1'; S2 <= '1'; S3 <= '0'; S4 <= '0'; S5 <= '0';
+        wait for 10 ns;
+
+        -- Stimulus 25: 11001
+        S1 <= '1'; S2 <= '1'; S3 <= '0'; S4 <= '0'; S5 <= '1';
+        wait for 10 ns;
+
+        -- Stimulus 26: 11010
+        S1 <= '1'; S2 <= '1'; S3 <= '0'; S4 <= '1'; S5 <= '0';
+        wait for 10 ns;
+
+        -- Stimulus 27: 11011
+        S1 <= '1'; S2 <= '1'; S3 <= '0'; S4 <= '1'; S5 <= '1';
+        wait for 10 ns;
+
+        -- Stimulus 28: 11100
+        S1 <= '1'; S2 <= '1'; S3 <= '1'; S4 <= '0'; S5 <= '0';
+        wait for 10 ns;
+
+        -- Stimulus 29: 11101
+        S1 <= '1'; S2 <= '1'; S3 <= '1'; S4 <= '0'; S5 <= '1';
+        wait for 10 ns;
+
+        -- Stimulus 30: 11110
+        S1 <= '1'; S2 <= '1'; S3 <= '1'; S4 <= '1'; S5 <= '0';
+        wait for 10 ns;
+
+        -- Stimulus 31: 11111
         S1 <= '1'; S2 <= '1'; S3 <= '1'; S4 <= '1'; S5 <= '1';
         wait for 10 ns;
 
