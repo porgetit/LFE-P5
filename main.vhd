@@ -29,7 +29,7 @@ architecture Structural of Main is
     end component;
     component C2
         port ( S1,S2,S3,S4,S5 : in  std_logic;
-              D1              : out std_logic );
+               D1             : out std_logic );
     end component;
     component C3
         port ( S1,S2,S3,S4,S5 : in  std_logic;
@@ -41,29 +41,28 @@ architecture Structural of Main is
     end component;
 
     ------------------------------------------------------------------
-    --  Señales intermedias (patrón: Dx_Cy)
+    --  Señales intermedias
     ------------------------------------------------------------------
-    signal D0_C1, D1_C1, D2_C1, D3_C1 : std_logic;
-    signal D0_C2, D1_C2, D2_C2, D3_C2 : std_logic;
-    signal D0_C3, D1_C3, D2_C3, D3_C3 : std_logic;
-    signal D0_C4, D1_C4, D2_C4, D3_C4 : std_logic;
+    signal D0_C1 : std_logic;
+    signal D1_C2 : std_logic;
+    signal D2_C3 : std_logic;
+    signal D3_C4 : std_logic;
 
 begin
     ------------------------------------------------------------------
     --  Instancias de los sub‑módulos
     ------------------------------------------------------------------
-    U_C1 : C1 port map (S1,S2,S3,S4,S5, D0_C1, D1_C1, D2_C1, D3_C1);
-    U_C2 : C2 port map (S1,S2,S3,S4,S5, D0_C2, D1_C2, D2_C2, D3_C2);
-    U_C3 : C3 port map (S1,S2,S3,S4,S5, D0_C3, D1_C3, D2_C3, D3_C3);
-    U_C4 : C4 port map (S1,S2,S3,S4,S5, D0_C4, D1_C4, D2_C4, D3_C4);
+    U_C1 : C1 port map (S1, S2, S3, S4, S5, D0_C1);
+    U_C2 : C2 port map (S1, S2, S3, S4, S5, D1_C2);
+    U_C3 : C3 port map (S1, S2, S3, S4, S5, D2_C3);
+    U_C4 : C4 port map (S1, S2, S3, S4, S5, D3_C4);
 
     ------------------------------------------------------------------
-    --  TODO: Definir la lógica de agregación de salidas.
-    --  Por ahora, se exportan las salidas de C1 como “placeholder”.
+    --  Lógica de asignación de salidas
     ------------------------------------------------------------------
     D0 <= D0_C1;
-    D1 <= D1_C1;
-    D2 <= D2_C1;
-    D3 <= D3_C1;
+    D1 <= D1_C2;
+    D2 <= D2_C3;
+    D3 <= D3_C4;
 
 end architecture Structural;

@@ -17,7 +17,7 @@ architecture behavior of C4 is
     signal D31, D32, D33, D34, D35, D36, D37, D38, D39, D310 : std_logic;
 begin
     D31 <= (S1 or S2 or (not S3) or S4 or (not S5));
-    D32 <= (S1 or S2 or (not S3) or (not S4) or (not S5);
+    D32 <= (S1 or S2 or (not S3) or (not S4) or (not S5));
     D33 <= (S1 or (not S2) or (not S3) or S4 or (not S5));
     D34 <= (S1 or (not S2) or (not S3) or (not S4) or (not S5));
     D35 <= ((not S1) or (not S2) or S3 or S4 or (not S5));
